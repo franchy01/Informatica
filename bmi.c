@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// Nombre: Franco Camaño
+// Legajo:  410155
+
 int main(void)
 {
 	float peso;
