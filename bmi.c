@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Nombre: Franco Camaño
+// Nombre: Franco CamaÃ±o
 // Legajo:  410155
 
 int main(void)
@@ -18,6 +18,14 @@ int main(void)
 	
 	
 	bmi= (peso/(altura*altura));
+
+	printf("\n");
+	printf("\nIndice | Condicion:\n");
+	printf("----------------------------- ");
+	printf("\n <18.5 | Bajo peso ");
+	printf("\n 18.5 a 24.9 | Normal ");
+	printf("\n 25.0 a 29.9 | Sobrepeso ");
+	printf("\n >=30| Obesidad ");
 	
 	printf("Su Indice de masa corporal es: %.2f\n", bmi );
 	
@@ -37,13 +45,7 @@ int main(void)
 		printf("\n tenes obesidad waso");
 	}
 	
-	printf("\n");
-	printf("\nIndice | Condicion:\n");
-	printf("----------------------------- ");
-	printf("\n <18.5 | Bajo peso ");
-	printf("\n 18.5 a 24.9 | Normal ");
-	printf("\n 25.0 a 29.9 | Sobrepeso ");
-	printf("\n >=30| Obesidad ");
+	
 	
 	return 0;
 }
