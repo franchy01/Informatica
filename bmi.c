@@ -9,12 +9,27 @@ int main(void)
 	float altura;
 	float bmi;
 	
-	
+do{
 	printf("Ingrese el peso en kg:");
 	scanf("%f", &peso);
+if (peso<=0){
+        printf("Error ingrese el peso nuevamente\n");         
+     }
+    }
+while(peso<=0);
+       printf("El peso es valido\n");    
+
+	
+do{
 	printf("Ingrese la altura en metros:");
 	scanf("%f", &altura);
 	
+ if (altura<=0){      
+         printf("Error ingrese la altura nuevamente\n");      
+     }
+    }
+while(altura<=0);
+        printf("El peso es valido\n");	
 	
 	
 	bmi= (peso/(altura*altura));
