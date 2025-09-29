@@ -1,10 +1,15 @@
+
+// Nombre: Camaño Franco David
+// Legajo: 410155
+//https://github.com/franchy01/Informatica
+
 #include <stdio.h>
-#include <math.h>
+#define PI 3.1416
 
 
 float calcularAreaRectangulo(float longitud, float altura);
 float calcularPerimetroRectangulo(float longitud, float altura);
-float calcularDiagonalRectangulo(float longitud, float altura);
+float calcularDiagonalRectangulo(float longitud, float altura); 
 float calcularAreaCirculo(float radio);
 float calcularPerimetroCirculo(float radio);
 void imprimirResultados(float area, float perimetro);
@@ -14,16 +19,23 @@ int main() {
 	float longitud, altura, radio;
 	float area, perimetro;
 	
-	printf("Ingrese la figura que desea calcular:\n");
-	printf("1: Rectangulo\n");
-	printf("2: Circulo\n");
-	printf("Opcion: ");
-	scanf("%d", &opcion);
 	
+	do {
+		printf("Ingrese la figura que desea calcular (1: rectangulo, 2: circulo): ");
+		scanf("%d", &opcion);
+		
+		if (opcion != 1 && opcion != 2) {
+			printf("Opcion invalida. Intente nuevamente.\n");
+		}
+	} while (opcion != 1 && opcion != 2);
+	
+	// --- Caso rectángulo ---
 	if (opcion == 1) {
-		printf("\nOpcion de rectangulo seleccionada\n");
+		printf("Opcion de rectangulo seleccionada\n\n");
+		
 		printf("Ingrese la longitud del rectangulo: ");
 		scanf("%f", &longitud);
+		
 		printf("Ingrese la altura del rectangulo: ");
 		scanf("%f", &altura);
 		
@@ -32,11 +44,13 @@ int main() {
 		
 		imprimirResultados(area, perimetro);
 		
-		printf("La diagonal del rectangulo es: %.2f\n", 
+		printf("La diagonal al cuadrado del rectangulo es: %.2f\n",
 			   calcularDiagonalRectangulo(longitud, altura));
 	} 
-	else if (opcion == 2) {
-		printf("\nOpcion de circulo seleccionada\n");
+	
+	else {
+		printf("Opcion de circulo seleccionada\n\n");
+		
 		printf("Ingrese el radio del circulo: ");
 		scanf("%f", &radio);
 		
@@ -44,9 +58,6 @@ int main() {
 		perimetro = calcularPerimetroCirculo(radio);
 		
 		imprimirResultados(area, perimetro);
-	} 
-	else {
-		printf("Opcion invalida. Debe ser 1 o 2.\n");
 	}
 	
 	return 0;
@@ -61,20 +72,20 @@ float calcularPerimetroRectangulo(float longitud, float altura) {
 	return 2 * (longitud + altura);
 }
 
+
 float calcularDiagonalRectangulo(float longitud, float altura) {
-	return sqrt(pow(longitud, 2) + pow(altura, 2));
+	return longitud * longitud + altura * altura;
 }
 
 float calcularAreaCirculo(float radio) {
-	return M_PI * pow(radio, 2);
+	return PI * radio * radio;
 }
 
 float calcularPerimetroCirculo(float radio) {
-	return 2 * M_PI * radio;
+	return 2 * PI * radio;
 }
 
 void imprimirResultados(float area, float perimetro) {
 	printf("El area es: %.2f\n", area);
 	printf("El perimetro es: %.2f\n", perimetro);
 }
-
